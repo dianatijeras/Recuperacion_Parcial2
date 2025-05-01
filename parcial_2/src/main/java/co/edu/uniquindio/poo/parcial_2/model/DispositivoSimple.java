@@ -1,5 +1,4 @@
-package co.edu.uniquindio.poo.model;
-
+package co.edu.uniquindio.poo.parcial_2.model;
 /**
  * Implementación básica de dispositivo de seguridad.
  */

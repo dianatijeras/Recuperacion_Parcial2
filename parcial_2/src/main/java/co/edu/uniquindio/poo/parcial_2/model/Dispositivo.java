@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.model;
+package co.edu.uniquindio.poo.parcial_2.model;
 
 /**
  * Interfaz común para dispositivos de seguridad.

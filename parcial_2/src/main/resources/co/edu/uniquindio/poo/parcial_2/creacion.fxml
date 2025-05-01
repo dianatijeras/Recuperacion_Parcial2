@@ -6,25 +6,34 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane fx:id="pn_MenuCreacion" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="547.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.parcial_2.viewController.CreacionViewController">
+<Pane fx:id="pn_MenuCreacion" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="516.0" style="-fx-background-color: #95908e;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.parcial_2.viewController.CreacionViewController">
    <children>
-      <Separator fx:id="sp_MenuCreacion" layoutX="86.0" layoutY="182.0" prefHeight="0.0" prefWidth="359.0" />
-      <Label fx:id="lbl_Creacion" layoutX="212.0" layoutY="105.0" text="Desea crear :">
+      <Label layoutX="71.0" layoutY="55.0" text="Desea crear :">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Button fx:id="btn_CreacionProducto" layoutX="141.0" layoutY="243.0" mnemonicParsing="false" onAction="#onClick_CreacionProducto" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: black;" text="Producto" textFill="WHITE">
+      <Button fx:id="btn_CreacionProducto" layoutX="214.0" layoutY="115.0" mnemonicParsing="false" onAction="#onClick_CreacionProducto" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #dfdbda;" text="Producto">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btn_CreacionDispositivo" layoutX="320.0" layoutY="243.0" mnemonicParsing="false" onAction="#onClick_CreacionDispositivo" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: black;" text="Dispositivo" textFill="WHITE">
+      <Button fx:id="btn_CreacionDispositivo" layoutX="214.0" layoutY="191.0" mnemonicParsing="false" onAction="#onClick_CreacionDispositivo" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #dfdbda;" text="Dispositivo">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Pane fx:id="pn_MenuCreacion2" layoutX="-1.0" prefHeight="363.0" prefWidth="59.0" style="-fx-background-color: #f3ecec;" />
+      <Pane fx:id="pn_MenuCreacion2" layoutX="-1.0" prefHeight="350.0" prefWidth="59.0" style="-fx-background-color: #73706f;" />
+      <Button fx:id="btn_AtrasMenuInicio" layoutX="192.0" layoutY="299.0" mnemonicParsing="false" onAction="#onClick_AtrasMenuInicio" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #dfdbda;" text="Atras">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_SalirCreacion" layoutX="295.0" layoutY="299.0" mnemonicParsing="false" onAction="#onClick_SalirCreacion" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #dfdbda;" text="Salir">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Separator layoutX="139.0" layoutY="278.0" prefHeight="3.0" prefWidth="265.0" />
    </children>
 </Pane>

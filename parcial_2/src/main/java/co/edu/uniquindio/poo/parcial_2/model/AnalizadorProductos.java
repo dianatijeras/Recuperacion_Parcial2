@@ -76,4 +76,16 @@ public class AnalizadorProductos {
         }
     }
 
+    public static List<Producto> filtrarPorNombre(String nombre) {
+        List<Producto> resultado = new ArrayList<>();
+        RegistroGlobal registro = RegistroGlobal.getInstancia();
+        List<Producto> productos = registro.getProductos();
+
+        for (Producto p : productos) {
+            if (p.getNombre().toLowerCase().contains(nombre.toLowerCase())) {
+                resultado.add(p);
+            }
+        }
+        return resultado;
+    }
 }

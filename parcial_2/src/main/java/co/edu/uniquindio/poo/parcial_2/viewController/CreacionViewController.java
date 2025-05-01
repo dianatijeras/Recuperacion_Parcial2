@@ -53,7 +53,20 @@ public class CreacionViewController {
 
     @FXML
     void onClick_AtrasMenuInicio(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/parcial_2/menuInicio.fxml"));
+            Parent root = loader.load();
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
 
+            Stage currentStage = (Stage) btn_AtrasMenuInicio.getScene().getWindow();
+            currentStage.close();
+
+            newStage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -92,7 +105,8 @@ public class CreacionViewController {
 
     @FXML
     void onClick_SalirCreacion(ActionEvent event) {
-
+        Stage stage = (Stage) btn_SalirCreacion.getScene().getWindow();
+        stage.close();
     }
 
     @FXML

@@ -72,7 +72,7 @@ public class CreacionViewController {
     @FXML
     void onClick_CreacionDispositivo(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("co/edu/uniquindio/poo/parcial_2/creacionDispositivo.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/poo/parcial_2/creacionDispositivo.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

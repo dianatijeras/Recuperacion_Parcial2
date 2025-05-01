@@ -1,7 +1,6 @@
 package co.edu.uniquindio.poo.parcial_2.viewController;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -9,21 +8,14 @@ import co.edu.uniquindio.poo.parcial_2.controller.MonitoreoController;
 import co.edu.uniquindio.poo.parcial_2.model.AnalizadorProductos;
 import co.edu.uniquindio.poo.parcial_2.model.Producto;
 import co.edu.uniquindio.poo.parcial_2.model.RegistroGlobal;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -62,10 +54,6 @@ public class MonitoreoViewController {
     @FXML
     private TextField txf_BuscarProducto;
 
-    private AnalizadorProductos analizadorProductos;
-
-    private Producto producto;
-
     private MonitoreoController monitoreoController = new MonitoreoController();
 
     private void inicializarProductos() {
@@ -73,23 +61,23 @@ public class MonitoreoViewController {
 
         registroGlobal.getProductos().clear();
 
-        Producto laptop = new Producto.Builder()
-                .setNombre("Laptop Pro")
-                .setPrecio(3500000)
-                .addComponente("RAM")
-                .addComponente("SSD")
-                .addComponente("Teclado retroiluminado")
+        Producto ensalada = new Producto.Builder()
+                .setNombre("Ensalada cesar")
+                .setPrecio(20000)
+                .addComponente("Pollo")
+                .addComponente("Tocineta")
+                .addComponente("Pan Tostado")
                 .build();
 
-        Producto tablet = new Producto.Builder()
-                .setNombre("Tablet X")
-                .setPrecio(1800000)
-                .addComponente("Pantalla táctil")
-                .addComponente("WiFi")
+        Producto jugo = new Producto.Builder()
+                .setNombre("Jugo Frutos Rojos")
+                .setPrecio(7000)
+                .addComponente("Fresa")
+                .addComponente("Mora")
                 .build();
 
-        registroGlobal.getProductos().add(laptop);
-        registroGlobal.getProductos().add(tablet);
+        registroGlobal.getProductos().add(ensalada);
+        registroGlobal.getProductos().add(jugo);
     }
 
     @FXML
@@ -113,26 +101,20 @@ public class MonitoreoViewController {
     @FXML
     void onClick_FiltrarProducto(ActionEvent event) {
         String criterio = cbx_CriterioBusqueda.getValue();
-        String valor = txf_BuscarProducto.getText().toLowerCase();
-        List<Producto> resultado = null;
+        String valor = txf_BuscarProducto.getText().trim();
 
-        switch (criterio) {
-            case "Nombre":
-                resultado = AnalizadorProductos.filtrarPorNombre(valor);
-                break;
-            case "Precio":
-                resultado = AnalizadorProductos.ordenarPorPrecio();
-                break;
-            case "Componente":
-                resultado = AnalizadorProductos.filtrarPorComponente(valor);
-                break;
+        if (criterio == null || criterio.isEmpty()) {
+            actualizarListaProductos();
+            return;
         }
 
-        if (resultado != null) {
-
-            ObservableList<Producto> observableResultado = FXCollections.observableArrayList(resultado);
-            ltView_Productos.setItems(observableResultado);
+        if (valor.isEmpty()) {
+            actualizarListaProductos();
+            return;
         }
+
+        ObservableList<Producto> productosFiltrados = monitoreoController.obtenerProductosFiltrados(criterio.toLowerCase(), valor.toLowerCase());
+        ltView_Productos.setItems(productosFiltrados);
     }
 
 
@@ -159,14 +141,16 @@ public class MonitoreoViewController {
 
         cbx_CriterioBusqueda.getItems().addAll("Nombre", "Precio", "Componente");
 
-        btn_FiltrarProducto.setOnAction(e -> {
-            String criterio = cbx_CriterioBusqueda.getValue();
-            String texto = txf_BuscarProducto.getText().trim();
-            ltView_Productos.setItems(monitoreoController.obtenerProductosFiltrados(criterio, texto));
-        });
+        btn_FiltrarProducto.setOnAction(e -> onClick_FiltrarProducto(e));
 
         inicializarProductos();
 
+        actualizarListaProductos();
+
     }
 
+    public void actualizarListaProductos() {
+        ObservableList<Producto> todosProductos = monitoreoController.obtenerTodosLosProductos();
+        ltView_Productos.setItems(todosProductos);
+    }
 }

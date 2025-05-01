@@ -84,7 +84,7 @@ public class CreacionProductoViewController {
                 .build();
 
         if (registroGlobal == null) {
-            registroGlobal = RegistroGlobal.getInstancia(); // Inicializamos el registro si no lo estaba
+            registroGlobal = RegistroGlobal.getInstancia();
         }
         registroGlobal.agregarProducto(nuevoProducto);
 

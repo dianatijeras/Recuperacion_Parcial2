@@ -32,9 +32,6 @@ public class MenuInicioViewController {
     private Button btn_Monitoreo;
 
     @FXML
-    private Button btn_Productos;
-
-    @FXML
     private Label lbl_bienvenida;
 
     @FXML
@@ -94,29 +91,12 @@ public class MenuInicioViewController {
         }
     }
 
-    @FXML
-    void onClick_Productos(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Productos.fxml"));
-            Parent root = loader.load();
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     void initialize() {
         assert btn_Creacion != null : "fx:id=\"btn_Creacion\" was not injected: check your FXML file 'menuInicio.fxml'.";
         assert btn_Dispositivos != null : "fx:id=\"btn_Dispositivos\" was not injected: check your FXML file 'menuInicio.fxml'.";
         assert btn_Monitoreo != null : "fx:id=\"btn_Monitoreo\" was not injected: check your FXML file 'menuInicio.fxml'.";
-        assert btn_Productos != null : "fx:id=\"btn_Productos\" was not injected: check your FXML file 'menuInicio.fxml'.";
         assert lbl_bienvenida != null : "fx:id=\"lbl_bienvenida\" was not injected: check your FXML file 'menuInicio.fxml'.";
         assert pn_menuInicio != null : "fx:id=\"pn_menuInicio\" was not injected: check your FXML file 'menuInicio.fxml'.";
         assert pn_menuInicio2 != null : "fx:id=\"pn_menuInicio2\" was not injected: check your FXML file 'menuInicio.fxml'.";

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="pn_menuInicio" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #92250d;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.parcial_2.viewController.MenuInicioViewController">
+<Pane fx:id="pn_menuInicio" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="553.0" style="-fx-background-color: #92250d;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.parcial_2.viewController.MenuInicioViewController">
    <children>
       <Pane fx:id="pn_menuInicio2" layoutX="-7.0" layoutY="-6.0" prefHeight="406.0" prefWidth="104.0" style="-fx-background-color: #e33009;" />
       <Label fx:id="lbl_bienvenida" layoutX="114.0" layoutY="57.0" text="Bienvenido a TecnoSafe S.A" textFill="WHITE">
@@ -24,11 +24,6 @@
          </font>
       </Button>
       <Button fx:id="btn_Creacion" layoutX="344.0" layoutY="267.0" mnemonicParsing="false" onAction="#onClick_Creacion" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: black;" text="Creacion" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <Button fx:id="btn_Productos" layoutX="461.0" layoutY="267.0" mnemonicParsing="false" onAction="#onClick_Productos" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: black;" text="Productos" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

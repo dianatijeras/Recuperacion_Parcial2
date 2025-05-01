@@ -1,13 +1,9 @@
 package co.edu.uniquindio.poo.parcial_2.controller;
 
-import co.edu.uniquindio.poo.parcial_2.model.AnalizadorProductos;
 import co.edu.uniquindio.poo.parcial_2.model.Producto;
 import co.edu.uniquindio.poo.parcial_2.model.RegistroGlobal;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MonitoreoController {
 

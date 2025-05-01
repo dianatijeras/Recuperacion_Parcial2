@@ -2,7 +2,7 @@ package co.edu.uniquindio.poo.parcial_2.model;
 /**
  * Implementación básica de dispositivo de seguridad.
  */
-public class DispositivoSimple implements Dispositivo {
+public class DispositivoSimple implements Dispositivo, Cloneable {
 
     private String nombre;
     private boolean activo;
@@ -28,5 +28,15 @@ public class DispositivoSimple implements Dispositivo {
     public String tipo() {
         return nombre;
     }
-    
+
+
+    @Override
+    public DispositivoSimple clone() {
+        try {
+            return (DispositivoSimple) super.clone();
+        } catch (CloneNotSupportedException e){
+            throw new RuntimeException("El dispositivo no se puede clonar");
+        }
+    }
+
 }

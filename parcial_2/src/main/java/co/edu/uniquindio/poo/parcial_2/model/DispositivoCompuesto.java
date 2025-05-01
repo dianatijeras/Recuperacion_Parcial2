@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Dispositivo compuesto que puede contener otros dispositivos.
  */
-public class DispositivoCompuesto implements Dispositivo {
+public class DispositivoCompuesto implements Dispositivo, Cloneable {
 
     private List<Dispositivo> hijos = new ArrayList<>();
     private String nombre;
@@ -45,5 +45,14 @@ public class DispositivoCompuesto implements Dispositivo {
     public String tipo() {
         return nombre;
     }
-    
+
+    @Override
+    public DispositivoCompuesto clone() {
+        try {
+            return (DispositivoCompuesto) super.clone();
+        } catch (CloneNotSupportedException e){
+            throw new RuntimeException("El dispositivo no se puede clonar");
+        }
+    }
+
 }

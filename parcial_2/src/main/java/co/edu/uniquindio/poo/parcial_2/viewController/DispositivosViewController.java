@@ -49,9 +49,7 @@ public class DispositivosViewController {
 
     @FXML
     private Pane pn_Dispositivos2;
-
-    private CentralMonitoreo centralMonitoreo;
-
+    
     private DispositivoCompuesto dispositivoCompuesto;
 
 
@@ -156,6 +154,8 @@ public class DispositivosViewController {
         assert ltView_Dispositivos != null : "fx:id=\"ltView_Dispositivos\" was not injected: check your FXML file 'dispositivos.fxml'.";
         assert pn_Dispositivos != null : "fx:id=\"pn_Dispositivos\" was not injected: check your FXML file 'dispositivos.fxml'.";
         assert pn_Dispositivos2 != null : "fx:id=\"pn_Dispositivos2\" was not injected: check your FXML file 'dispositivos.fxml'.";
+
+        inicializarDispositivos();
 
         cbx_CriterioBusqueda.getItems().addAll(
                 "Dispositivos activos",

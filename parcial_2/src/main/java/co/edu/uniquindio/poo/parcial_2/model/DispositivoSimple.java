@@ -2,7 +2,7 @@ package co.edu.uniquindio.poo.parcial_2.model;
 /**
  * Implementación básica de dispositivo de seguridad.
  */
-public class DispositivoSimple implements Dispositivo, Cloneable {
+public class DispositivoSimple implements Dispositivo, ClonableDispositivoSimple {
 
     private String nombre;
     private boolean activo;

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Dispositivo compuesto que puede contener otros dispositivos.
  */
-public class DispositivoCompuesto implements Dispositivo, Cloneable {
+public class DispositivoCompuesto implements Dispositivo, ClonableDispositivoCompuesto {
 
     private List<Dispositivo> hijos = new ArrayList<>();
     private String nombre;
@@ -17,6 +17,10 @@ public class DispositivoCompuesto implements Dispositivo, Cloneable {
 
     public void agregar(Dispositivo d) {
         hijos.add(d);
+    }
+
+    public List<Dispositivo> getHijos() {
+        return hijos;
     }
 
     @Override
